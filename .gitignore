@@ -7,6 +7,10 @@
 *.obj
 *.elf
 
+# image and binary files
+*.bin 
+*.img 
+
 # Linker output
 *.ilk
 *.map
