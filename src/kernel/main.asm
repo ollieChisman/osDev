@@ -1,4 +1,4 @@
-org 0x7C00
+org 0x0
 bits 16
 
 %define ENDL 0x0D, 0x0A
@@ -33,30 +33,21 @@ puts:
 	ret
 
 main:
-	;setup data segments
-	mov ax , 0	;can not write directly to ds/es
-	mov ds, ax
-	mov es, ax
-
-	;Setup Stack
-	mov ss, ax
-	mov sp, 0x7C00 ;stack grows downwards
-
 	mov si, msg_hello
 	call puts
-	mov si, msg_melon
+	mov si, msg_stage
 	call puts
-	mov si, msg_bacon
+	mov si, msg_boot_method
 	call puts
+    mov si, msg_platform
+    call puts
 	hlt
 
 .halt:
 	jmp .halt
 
 
-msg_hello: db 'Hello World!', ENDL, 0
-msg_melon: db 'melon!', ENDL, 0
-msg_bacon: db 'Welcome To Bacon', ENDL,0
-
-times 510-($-$$) db 0
-dw 0AA55h
+msg_hello: db 'Welcome To Bacon!', ENDL, 0
+msg_stage: db 'This is a test Stage 2', ENDL, 0
+msg_boot_method: db 'By using Fat 12', ENDL,0
+msg_platform: db 'On x86-64 asm on a floppy', ENDL,0
