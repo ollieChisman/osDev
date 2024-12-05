@@ -1,0 +1,14 @@
+NOTE: /search word and n for next
+Key: Done (✓), working on (•)  
+
+--- MAIN LIST ---
+-•- pre bootstrap and general setup -> &0001
+
+-•- &0001 PRE BOOTSTRAP AND GENERAL SETUP :
+    -•- add a custom MBR (Just for fun add because pre added once don't seem to work)
+    - - implement FAT12 (check nano bytes boot loader for details)
+    - - implement better bootstrap (check nano bytes boot loader for details)
+    - - read from disk and floppy
+    -✓- add disk extentions
+
+NOTE: This should take me a while all before I can write any c code and even be in 32bit potected mode
